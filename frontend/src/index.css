@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    font-family: 'DM Sans', sans-serif;
+  }
+  
+  body {
+    @apply bg-slate-950 text-slate-100;
+    background-image: 
+      radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(249, 115, 22, 0.05) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-indigo-600 rounded-full;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+  }
+
+  .btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-2.5 px-6 rounded-xl
+           transition-all duration-200 active:scale-95 shadow-lg shadow-indigo-900/40
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-white/10 hover:bg-white/20 text-white font-semibold py-2.5 px-6 rounded-xl
+           border border-white/20 transition-all duration-200 active:scale-95;
+  }
+
+  .btn-success {
+    @apply bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2 px-4 rounded-lg
+           transition-all duration-200 active:scale-95 text-sm;
+  }
+
+  .btn-danger {
+    @apply bg-red-600 hover:bg-red-500 text-white font-semibold py-2 px-4 rounded-lg
+           transition-all duration-200 active:scale-95 text-sm;
+  }
+
+  .input-field {
+    @apply w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white
+           placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500
+           focus:border-transparent transition-all duration-200 text-sm;
+  }
+
+  .label {
+    @apply block text-slate-400 text-xs font-medium uppercase tracking-wider mb-1.5;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .table-cell {
+    @apply px-4 py-3 text-sm text-slate-300;
+  }
+
+  .table-header {
+    @apply px-4 py-3 text-xs font-semibold text-slate-400 uppercase tracking-wider text-left;
+  }
+
+  .page-enter {
+    animation: slideUp 0.4s ease-out;
+  }
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #a5bafb 0%, #f97316 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
